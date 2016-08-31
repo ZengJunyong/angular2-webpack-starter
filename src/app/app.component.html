@@ -1,0 +1,17 @@
+<h1 class="text-center">GaiGai</h1>
+
+<div class="container">
+  <ul class="nav nav-pills">
+    <li routerLinkActive="active">
+      <a [routerLink]="['/full']">FULL</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/per10']">10% OFF</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/sdn']">SDN</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+
+</div>

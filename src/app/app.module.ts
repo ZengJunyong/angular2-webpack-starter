@@ -11,7 +11,6 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
-import { App } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState } from './app.service';
 import { Home } from './home';
@@ -24,13 +23,17 @@ const APP_PROVIDERS = [
   AppState
 ];
 
+import {AppComponent}       from './app.component';
+import {FullComponent}       from './full.component';
+
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ App ],
+  bootstrap: [ AppComponent ],
   declarations: [
-    App,
+    AppComponent,
+    FullComponent,
     About,
     Home,
     NoContent
