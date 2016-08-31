@@ -25,6 +25,8 @@ const APP_PROVIDERS = [
 
 import {AppComponent}       from './app.component';
 import {FullComponent}       from './full.component';
+import {Per10Component} from './per10.component';
+import {SDNComponent}       from './sdn.component';
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -33,7 +35,7 @@ import {FullComponent}       from './full.component';
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    FullComponent,
+    FullComponent,Per10Component,SDNComponent,
     About,
     Home,
     NoContent
