@@ -27,7 +27,7 @@ import {AppComponent}       from './app.component';
 import {FullComponent}       from './full.component';
 import {Per10Component} from './per10.component';
 import {SDNComponent}       from './sdn.component';
-
+import {PayComponent} from './pay.component';
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -35,7 +35,7 @@ import {SDNComponent}       from './sdn.component';
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    FullComponent,Per10Component,SDNComponent,
+    FullComponent,Per10Component,SDNComponent,PayComponent,
     About,
     Home,
     NoContent
