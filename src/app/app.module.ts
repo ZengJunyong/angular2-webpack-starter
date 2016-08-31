@@ -13,8 +13,6 @@ import { ROUTES } from './app.routes';
 // App is our top level component
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState } from './app.service';
-import { Home } from './home';
-import { About } from './about';
 import { NoContent } from './no-content';
 
 // Application wide providers
@@ -36,8 +34,6 @@ import {PayComponent} from './pay.component';
   declarations: [
     AppComponent,
     FullComponent,Per10Component,SDNComponent,PayComponent,
-    About,
-    Home,
     NoContent
   ],
   imports: [ // import Angular's modules
