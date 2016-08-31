@@ -4,6 +4,7 @@ import {NoContent} from './no-content';
 import {FullComponent} from './full.component';
 import {Per10Component} from './per10.component';
 import {SDNComponent}       from './sdn.component';
+import {PayComponent} from './pay.component';
 
 export const ROUTES: Routes = [
   {path: '', component: FullComponent},
@@ -16,6 +17,9 @@ export const ROUTES: Routes = [
   }, {
     path: 'sdn',
     component: SDNComponent
+  }, {
+    path: 'pay',
+    component: PayComponent
   },
   {path: '**', component: NoContent},
 ];

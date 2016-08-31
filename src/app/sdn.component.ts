@@ -1,14 +1,15 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {StripeTableComponent} from './stripe.table.component'
+import {StripeService}     from './stripe.service';
 
 @Component({
   moduleId: module.id,
   templateUrl: 'price.table.html'
 })
 export class SDNComponent extends StripeTableComponent {
-  constructor(router: Router) {
-    super(router);
+  constructor(router: Router, stripeService: StripeService) {
+    super(router, stripeService);
     this.payments = [
       {amount: 330, itemName: 'GaiGai 1-dates package'},
       {amount: 1485, itemName: 'GaiGai 3-dates package'},

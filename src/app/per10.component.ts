@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {StripeTableComponent} from './stripe.table.component'
+import {StripeService}     from './stripe.service';
 
 @Component({
   moduleId: module.id,
@@ -8,8 +9,8 @@ import {StripeTableComponent} from './stripe.table.component'
 })
 export class Per10Component extends StripeTableComponent {
 
-  constructor(router: Router) {
-    super(router);
+  constructor(router: Router, stripeService: StripeService) {
+    super(router, stripeService);
     this.payments = [
       {amount: 695, itemName: 'GaiGai 1-dates package - 10% OFF'},
       {amount: 1785, itemName: 'GaiGai 3-dates package - 10% OFF'},
