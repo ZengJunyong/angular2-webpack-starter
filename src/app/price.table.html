@@ -11,7 +11,7 @@
     <td *ngFor="let payment of payments">
       S${{payment.amount}}
       <br>
-      <input (click)="choosePayment(payment)" type="image" src="app/images/buy-now.gif">
+      <button (click)="choosePayment(payment)" type="button" class="btn btn-primary">Pay with Card</button>
     </td>
   </tr>
   <tr>
@@ -20,7 +20,7 @@
     <td *ngFor="let plan of plans['3']">
       S${{plan.amount}}
       <br>
-      <input (click)="choosePayment(plan)" type="image" src="app/images/subscribe.gif">
+      <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
     </td>
   </tr>
   <tr>
@@ -29,7 +29,7 @@
     <td *ngFor="let plan of plans['6']">
       S${{plan.amount}}
       <br>
-      <input (click)="choosePayment(plan)" type="image" src="app/images/subscribe.gif">
+      <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
     </td>
   </tr>
 </table>
