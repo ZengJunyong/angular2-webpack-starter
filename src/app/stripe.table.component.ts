@@ -10,11 +10,13 @@ export class StripeTableComponent {
 
   choosePayment(plan: Plan) {
     var _this = this;
+    let key = 'pk_test_FX2nzQcClgXqETUTMZDK2BNu';
+    // let key = 'pk_live_Zo2921HDEtTxDEZfXS3ZVR5N';
     StripeCheckout.configure({
-      key: 'pk_test_oi0sKPJYLGjdvOXOM8tE8cMa',
+      key: key,
       name: 'GaiGai Pte Ltd',
       description: plan.itemName,
-      image: 'https://www.letsgaigai.com/gokaikai/assets/images/57.png',
+      image: 'https://www.letsgaigai.com/gokaikai/assets/images/big.logo.png',
       allowRememberMe: false,
       panelLabel: plan.count ? 'Subscribe' : 'Pay S$' + plan.amount,
       token: function (token: any) {

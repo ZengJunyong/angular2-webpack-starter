@@ -13,7 +13,10 @@ export class StripeService {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
-    return this.http.post('http://letsgaigai.com/stripe', payment, options)
+    let url = 'http://letsgaigai.com/stripe';
+    // let url = 'http://localhost:4000/stripe';
+
+    return this.http.post(url, payment, options)
       .map((res: Response) => res.json());
   }
 
