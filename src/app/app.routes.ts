@@ -9,7 +9,8 @@ import {StripeConfigResolve}   from './stripe.config.resolve';
 
 export const ROUTES: Routes = [
   {
-    path: '', component: FullComponent,
+    path: '',
+    component: FullComponent,
     resolve: {
       stripe: StripeConfigResolve
     }
@@ -20,15 +21,27 @@ export const ROUTES: Routes = [
     resolve: {
       stripe: StripeConfigResolve
     }
-  }, {
+  },
+  {
     path: 'per10',
-    component: Per10Component
-  }, {
+    component: Per10Component,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
+  },
+  {
     path: 'sdn',
-    component: SDNComponent
-  }, {
+    component: SDNComponent,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
+  },
+  {
     path: 'pay',
     component: PayComponent
   },
-  {path: '**', component: NoContent},
+  {
+    path: '**',
+    component: NoContent
+  },
 ];
