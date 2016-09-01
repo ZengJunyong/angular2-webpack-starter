@@ -12,11 +12,8 @@
 <app>
   Loading...
 </app>
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
-<script type="text/javascript">
-  Stripe.setPublishableKey('sk_test_qyDxOJuh1pV0IHDkTgwQveUa');
-</script>
+
 <% if (webpackConfig.metadata.isDevServer && webpackConfig.metadata.HMR !== true) { %>
 <!-- Webpack Dev Server reload -->
 <script src="/webpack-dev-server.js"></script>
