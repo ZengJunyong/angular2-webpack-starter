@@ -6,6 +6,9 @@ import {Observable}     from 'rxjs/Observable';
 
 @Injectable()
 export class StripeService {
+  path = 'http://letsgaigai.com/';
+  // path= 'http://localhost:4000/';
+
   constructor(private http: Http) {
   }
 
@@ -13,13 +16,17 @@ export class StripeService {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
-    let url = 'http://letsgaigai.com/stripe';
-    // let url = 'http://localhost:4000/stripe';
+    let url = this.path + 'stripe';
 
     return this.http.post(url, payment, options)
       .map((res: Response) => res.json());
   }
 
+  readConfig(): Observable<any> {
+    let url = this.path + 'stripeConfig';
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+  }
 
 }
 

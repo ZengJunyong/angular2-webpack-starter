@@ -5,12 +5,21 @@ import {FullComponent} from './full.component';
 import {Per10Component} from './per10.component';
 import {SDNComponent}       from './sdn.component';
 import {PayComponent} from './pay.component';
+import {StripeConfigResolve}   from './stripe.config.resolve';
 
 export const ROUTES: Routes = [
-  {path: '', component: FullComponent},
+  {
+    path: '', component: FullComponent,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
+  },
   {
     path: 'full',
-    component: FullComponent
+    component: FullComponent,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
   }, {
     path: 'per10',
     component: Per10Component

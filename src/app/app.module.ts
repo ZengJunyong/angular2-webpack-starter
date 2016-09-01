@@ -24,6 +24,8 @@ import {FullComponent}       from './full.component';
 import {Per10Component} from './per10.component';
 import {SDNComponent}       from './sdn.component';
 import {PayComponent} from './pay.component';
+import {StripeService}     from './stripe.service';
+import { StripeConfigResolve }  from './stripe.config.resolve';
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
@@ -42,7 +44,9 @@ import {PayComponent} from './pay.component';
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    StripeService,
+    StripeConfigResolve
   ]
 })
 export class AppModule {
