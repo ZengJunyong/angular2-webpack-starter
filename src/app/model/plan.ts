@@ -1,5 +1,9 @@
-import {Payment} from './payment'
-
-export interface Plan extends Payment {
-  count: number;
+export interface Plan {
+  id?: string;
+  tokenId?: string;
+  email?: string;
+  amount: number;
+  itemName: string;
+  currencyCode?: string;
+  count?: number;
 }

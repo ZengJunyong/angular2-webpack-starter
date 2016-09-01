@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {StripeService}     from './stripe.service';
 
 export class StripeTableComponent {
-  stripe:any;
+  stripe: any;
 
   constructor(private router: Router, private stripeService: StripeService) {
   }
@@ -19,6 +19,8 @@ export class StripeTableComponent {
       panelLabel: plan.count ? 'Subscribe' : 'Pay S$' + plan.amount,
       token: function (token: any) {
         plan.tokenId = token.id;
+        plan.email = token.email;
+        console.log(plan);
         _this.stripeService.pay(plan).subscribe(result => _this.router.navigate(['/pay', result]));
       }
     }).open();
