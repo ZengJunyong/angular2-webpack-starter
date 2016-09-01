@@ -4,6 +4,5 @@ export interface Plan {
   email?: string;
   amount: number;
   itemName: string;
-  currencyCode?: string;
   count?: number;
 }
