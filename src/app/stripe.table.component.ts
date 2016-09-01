@@ -1,4 +1,4 @@
-import {Payment} from './model/payment'
+import {Plan} from './model/plan'
 import {Router} from '@angular/router';
 import {StripeService}     from './stripe.service';
 
@@ -8,18 +8,18 @@ export class StripeTableComponent {
   constructor(private router: Router, private stripeService: StripeService) {
   }
 
-  choosePayment(payment: Payment) {
+  choosePayment(plan: Plan) {
     var _this = this;
     StripeCheckout.configure({
       key: 'pk_test_oi0sKPJYLGjdvOXOM8tE8cMa',
       name: 'GaiGai Pte Ltd',
-      description: payment.itemName,
+      description: plan.itemName,
       image: 'https://www.letsgaigai.com/gokaikai/assets/images/57.png',
       allowRememberMe: false,
-      panelLabel: payment.count ? 'Subscribe' : 'Pay S$' + payment.amount,
+      panelLabel: plan.count ? 'Subscribe' : 'Pay S$' + plan.amount,
       token: function (token: any) {
-        payment.tokenId = token.id;
-        _this.stripeService.pay(payment).subscribe(result => _this.router.navigate(['/pay', result]));
+        plan.tokenId = token.id;
+        _this.stripeService.pay(plan).subscribe(result => _this.router.navigate(['/pay', result]));
       }
     }).open();
   }
