@@ -3,8 +3,7 @@ import {Router} from '@angular/router';
 import {StripeService}     from './stripe.service';
 
 export class StripeTableComponent {
-  payments: Payment[];
-  plans: any;
+  stripe:any;
 
   constructor(private router: Router, private stripeService: StripeService) {
   }

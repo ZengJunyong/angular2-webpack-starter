@@ -8,7 +8,7 @@
   </tr>
   <tr>
     <td>No installment</td>
-    <td *ngFor="let payment of payments">
+    <td *ngFor="let payment of stripe.payments">
       S${{payment.amount}}
       <br>
       <button (click)="choosePayment(payment)" type="button" class="btn btn-primary">Pay with Card</button>
@@ -17,7 +17,7 @@
   <tr>
     <td>3 months installment</td>
     <td></td>
-    <td *ngFor="let plan of plans['3']">
+    <td *ngFor="let plan of stripe.plans['3 months']">
       S${{plan.amount}}
       <br>
       <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
@@ -26,7 +26,7 @@
   <tr>
     <td>6 months installment</td>
     <td></td>
-    <td *ngFor="let plan of plans['6']">
+    <td *ngFor="let plan of stripe.plans['6 months']">
       S${{plan.amount}}
       <br>
       <button (click)="choosePayment(plan)" type="button" class="btn btn-primary">Subscribe</button>
