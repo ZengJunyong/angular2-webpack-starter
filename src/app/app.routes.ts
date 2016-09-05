@@ -1,17 +1,47 @@
-import { Routes, RouterModule } from '@angular/router';
-import { Home } from './home';
-import { About } from './about';
-import { NoContent } from './no-content';
+import {Routes} from '@angular/router';
+import {NoContent} from './no-content';
 
-import { DataResolver } from './app.resolver';
-
+import {FullComponent} from './full.component';
+import {Per10Component} from './per10.component';
+import {SDNComponent}       from './sdn.component';
+import {PayComponent} from './pay.component';
+import {StripeConfigResolve}   from './stripe.config.resolve';
 
 export const ROUTES: Routes = [
-  { path: '',      component: Home },
-  { path: 'home',  component: Home },
-  { path: 'about', component: About },
   {
-    path: 'detail', loadChildren: () => System.import('./+detail')
+    path: '',
+    component: FullComponent,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
   },
-  { path: '**',    component: NoContent },
+  {
+    path: 'full',
+    component: FullComponent,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
+  },
+  {
+    path: 'per10',
+    component: Per10Component,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
+  },
+  {
+    path: 'sdn',
+    component: SDNComponent,
+    resolve: {
+      stripe: StripeConfigResolve
+    }
+  },
+  {
+    path: 'pay',
+    component: PayComponent
+  },
+  {
+    path: '**',
+    component: NoContent
+  },
 ];
